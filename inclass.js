@@ -6,7 +6,7 @@ var num2 = 2;
 console.log(num - num2);
 
 
-//easy
+// //easy
 let name1 = 'Alejandro';
 let name2 = 'Alexis';
 let nameLength1 = name1.length;
@@ -17,9 +17,6 @@ if (nameLength1 > nameLength2) {
 } else { 
     console.log(`The name ${name2} is longer than ${name1} by ${nameLength2 - nameLength1}.`);    
 }
-
-// (nameLength1 > nameLength2) ? console.log(`The name ${name1} is longer than ${name2} by ${nameLength1 - nameLength2}.`) 
-//  : console.log(`The name ${name2} is longer than ${name1} by ${nameLength2 - nameLength1}.`);    
 
 //medium
 
@@ -38,17 +35,18 @@ else
 
 //hard
 
-function addition(n0, n1) {
-    return n0 + n1;
+function addition(firstNumber, secondNumber) {
+    return parseInt(firstNumber) + parseInt(secondNumber);
 }
-function subtraction(n0, n1) {
-    return n0 - n1;
+function subtraction(firstNumber, secondNumber) {
+    // return parseInt(firstNumber) - parseInt(secondNumber);
+    return parseInt(firstNumber) - parseInt(secondNumber);
 }
-function multiplication(n0, n1) {
-    return n0 * n1;
+function multiplication(firstNumber, secondNumber) {
+    return parseInt(firstNumber) * parseInt(secondNumber);
 }
-function division(n0, n1) {
-    return n0 / n1;
+function division(firstNumber, secondNumber) {
+    return parseInt(firstNumber) / parseInt(secondNumber);
 }
 
 
@@ -58,4 +56,33 @@ console.log(multiplication (23, 2));
 console.log(division (80,4 ));
 
 
-// very hard
+//VERY HARD: Create a simple calculator that prompts the user for a number, an operator (either +, -, * or /) and another number, 
+//and then uses the functions created in the hard challenge to output the value in sentence form. Example output: "3 + 4 = 7"
+
+let firstNumber = prompt("Enter a Number");
+let operator = prompt('Enter Operator: +, -, *, /.');
+let secondNumber = prompt('Enter a Number');
+
+switch (operator) {
+    case '+' :
+        let add = addition(firstNumber, secondNumber);
+        alert(`${firstNumber} + ${secondNumber} = ${add}`);
+        // console.log(parseInt(firstNumber) + parseInt(secondNumber));
+        break;
+    case '-' :
+       let sub = subtraction(firstNumber, secondNumber);
+       alert(`${firstNumber} - ${secondNumber} = ${sub}`);
+        break;
+    case '*' :
+       let times = multiplication(firstNumber, secondNumber);
+       console.log(times);
+       alert(`${firstNumber} * ${secondNumber} = ${times}`);
+        break;
+    case '/' :
+        let divide = division(firstNumber, secondNumber);
+        alert(`${firstNumber} / ${secondNumber} = ${divide}`);
+        break;
+    default: 
+        break;
+}
+
